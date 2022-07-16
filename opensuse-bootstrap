@@ -1,0 +1,104 @@
+#!/bin/bash
+set -e
+
+# opensuse-bootstrap --- Perform post-installation actions on a freshly installed openSUSE system.
+
+# Copyright (C) 2022 Marc Schlienger <marc.schlienger@posteo.de>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+echo
+tput setaf 2;echo "Performing post-installation actions on a freshly installed openSUSE system ...";tput sgr0
+echo
+
+echo "Do we need a desktop environment? (y/n)"
+read install_de
+if [[ "$install_de" == [yY] ]]; then
+    echo "Which desktop environment should be installed? (Gnome/KDE/Xfce)"
+    read de
+fi
+
+echo "Do we need a window manager? (y/n)"
+read install_wm
+if [[ "$install_wm" == [yY] ]]; then
+    echo "Which window manager should be installed? (bspwm/dwm/i3)"
+    read wm
+fi
+
+echo "Are we installing on a laptop? (y/n)"
+read install_on_laptop
+
+# Clone and install dotfiles and scripts
+[ ! -d ~/.dotfiles ] && git clone git@gitlab.com:marcschlienger/dotfiles.git ~/.dotfiles
+[[ -f ~/.bashrc ]] && mv ~/.bashrc ~/.bashrc.bak
+[[ -f ~/.profile ]] && mv ~/.profile ~/.profile.bak
+[[ -f ~/.zshrc ]] && mv ~/.zshrc ~/.zshrc.bak
+stow -d ~/.dotfiles bash emacs tmux vim xresources zsh
+sudo cp ./config/20-keyboard.conf /etc/X11/xorg.conf.d/
+
+[ ! -d ~/bin ] && git clone git@gitlab.com:marcschlienger/bin.git ~/bin
+
+# Installation
+bash 100-setup_git.sh
+
+bash 200-printer_and_scanner.sh
+[[ "$install_on_laptop" == [yY] ]] && bash 210-power_management.sh 
+
+bash 300-software.sh
+bash 310-nerd_fonts.sh
+
+if [[ "$install_de" == [yY] ]]; then
+    case $de in
+    	Gnome )
+            bash 400-gnome.sh 
+    		;;
+    	KDE ) 
+            bash 410-kde.sh 
+    		;;
+    	Xfce ) 
+            bash 420-xfce.sh 
+    		;;
+    	* )
+    	    echo "Window manager $wm not available ..." ;;
+    esac
+fi
+if [[ "$install_wm" == [yY] ]]; then
+    case $wm in
+    	bspwm )
+            bash 450-bspwm.sh
+            stow -d ~/.dotfiles bspwm compton dunst polybar sxhkd
+    		;;
+    	dwm ) 
+    	    bash 460-dwm.sh 
+            stow -d ~/.dotfiles compton dunst sxhkd-dwm
+            sudo cp ./dwm.desktop /usr/share/xsessions/
+    		;;
+    	i3 ) 
+    	    bash 470-i3wm.sh 
+            stow -d ~/.dotfiles compton dunst i3 polybar
+    		;;
+    	* )
+    	    echo "Window manager $wm not available ..." ;;
+    esac
+    bash 350-software_minimal.sh 
+    bash 550-st.sh
+fi
+
+bash 500-vim.sh
+bash 510-neovim.sh
+bash 520-emacs.sh
+bash 530-nnn.sh
+bash 540-fzf.sh
+
+bash 600-zsh.sh

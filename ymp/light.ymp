@@ -1,0 +1,74 @@
+<metapackage xmlns:os="http://opensuse.org/Standards/One_Click_Install" xmlns="http://opensuse.org/Standards/One_Click_Install">
+  <group distversion="openSUSE Tumbleweed">
+    <repositories>
+      <repository recommended="true">
+        <name>X11:Wayland</name>
+        <summary>Wayland Project</summary>
+        <description>Like X11:XOrg, just with more Wayland</description>
+        <url>https://download.opensuse.org/repositories/X11:/Wayland/openSUSE_Tumbleweed/</url>
+      </repository>
+      <repository recommended="true">
+        <name>openSUSE:Factory</name>
+        <summary>The next openSUSE distribution</summary>
+        <description>Any user who wishes to have the newest packages that include, but are not limited to, the Linux kernel, SAMBA, git, desktops, office applications and many other packages, will want Tumbleweed. Tumbleweed appeals to Power Users, Software Developers and openSUSE Contributors. If you require the latest software stacks and Integrated Development Environment or need a stable platform closest to bleeding edge Linux, Tumbleweed is the best choice for you.
+
+Staging dashboard is located at: https://build.opensuse.org/staging_workflows/openSUSE:Factory 
+
+List of known devel projects: https://build.opensuse.org/package/view_file/openSUSE:Factory:Staging/dashboard/devel_projects
+
+Have a look at http://en.opensuse.org/Portal:Factory for more details.</description>
+        <url>http://download.opensuse.org/tumbleweed/repo/oss/</url>
+      </repository>
+      <repository recommended="true">
+        <name>openSUSE:Tumbleweed</name>
+        <summary>Tumbleweed</summary>
+        <description>Tumbleweed is the openSUSE Rolling Release
+
+This OBS Project represents the content of the currently published
+snapshot. The newer repository for next publish can be found in openSUSE:Factory standard repository.
+</description>
+        <url>https://download.opensuse.org/repositories/openSUSE:/Tumbleweed/standard/</url>
+      </repository>
+      <repository recommended="true">
+        <name>openSUSE:Tumbleweed</name>
+        <summary>Tumbleweed</summary>
+        <description>Tumbleweed is the openSUSE Rolling Release
+
+This OBS Project represents the content of the currently published
+snapshot. The newer repository for next publish can be found in openSUSE:Factory standard repository.
+</description>
+        <url>http://download.opensuse.org/tumbleweed/repo/oss/</url>
+      </repository>
+      <repository recommended="false">
+        <name>openSUSE:Factory</name>
+        <summary>The next openSUSE distribution</summary>
+        <description>Any user who wishes to have the newest packages that include, but are not limited to, the Linux kernel, SAMBA, git, desktops, office applications and many other packages, will want Tumbleweed. Tumbleweed appeals to Power Users, Software Developers and openSUSE Contributors. If you require the latest software stacks and Integrated Development Environment or need a stable platform closest to bleeding edge Linux, Tumbleweed is the best choice for you.
+
+Staging dashboard is located at: https://build.opensuse.org/staging_workflows/openSUSE:Factory 
+
+List of known devel projects: https://build.opensuse.org/package/view_file/openSUSE:Factory:Staging/dashboard/devel_projects
+
+Have a look at http://en.opensuse.org/Portal:Factory for more details.</description>
+        <url>https://download.opensuse.org/repositories/openSUSE:/Factory/ports/</url>
+      </repository>
+    </repositories>
+    <software>
+      <item>
+        <name>light</name>
+        <summary>Control backlight controllers</summary>
+        <description>Light is a program to control backlight controllers under GNU/Linux,
+it is the successor of lightscript, which was a bash script
+with the same purpose, and tries to maintain the same functionality.
+
+Features
+ - Works excellent where other software have been proven unusable
+   or problematic, thanks to how it operates internally
+   and the fact that it does not rely on X.
+ - Can automatically figure out the best controller to use,
+   making full use of underlying hardware.
+ - Possibility to set a minimum brightness value, as some controllers
+   set the screen to be pitch black at a value of 0 (or higher).</description>
+      </item>
+    </software>
+  </group>
+</metapackage>

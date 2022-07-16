@@ -1,0 +1,73 @@
+<metapackage xmlns:os="http://opensuse.org/Standards/One_Click_Install" xmlns="http://opensuse.org/Standards/One_Click_Install">
+  <group distversion="openSUSE Tumbleweed">
+    <repositories>
+      <repository recommended="true">
+        <name>X11:lxde</name>
+        <summary>Lightweight X11 Desktop Environment</summary>
+        <description>&quot;Lightweight X11 Desktop Environment&quot;, is an extremely fast, performing and energy saving desktop environment. It is maintained by an international community of developers and comes with a beautiful interface, multi-language support, standard keyboard short cuts and additional features like tabbed file browsing. LXDE uses less CPU and less RAM. It is especially designed for cloud computers with low hardware specifications like netbooks, mobile devices (e.g. MIDs) or older computers. LXDE can be installed with distributions like openSUSE. It provides a fast desktop experience connecting easily with applications in the cloud. LXDE supports a wealth of programs, that can be installed with Linux systems locally. The source code of LXDE is licensed partly under the terms of the General Public License and partly under the LGPL.</description>
+        <url>https://download.opensuse.org/repositories/X11:/lxde/openSUSE_Tumbleweed/</url>
+      </repository>
+      <repository recommended="true">
+        <name>openSUSE:Factory</name>
+        <summary>The next openSUSE distribution</summary>
+        <description>Any user who wishes to have the newest packages that include, but are not limited to, the Linux kernel, SAMBA, git, desktops, office applications and many other packages, will want Tumbleweed. Tumbleweed appeals to Power Users, Software Developers and openSUSE Contributors. If you require the latest software stacks and Integrated Development Environment or need a stable platform closest to bleeding edge Linux, Tumbleweed is the best choice for you.
+
+Staging dashboard is located at: https://build.opensuse.org/staging_workflows/openSUSE:Factory 
+
+List of known devel projects: https://build.opensuse.org/package/view_file/openSUSE:Factory:Staging/dashboard/devel_projects
+
+Have a look at http://en.opensuse.org/Portal:Factory for more details.</description>
+        <url>http://download.opensuse.org/tumbleweed/repo/oss/</url>
+      </repository>
+      <repository recommended="true">
+        <name>openSUSE:Tumbleweed</name>
+        <summary>Tumbleweed</summary>
+        <description>Tumbleweed is the openSUSE Rolling Release
+
+This OBS Project represents the content of the currently published
+snapshot. The newer repository for next publish can be found in openSUSE:Factory standard repository.
+</description>
+        <url>https://download.opensuse.org/repositories/openSUSE:/Tumbleweed/standard/</url>
+      </repository>
+      <repository recommended="true">
+        <name>openSUSE:Tumbleweed</name>
+        <summary>Tumbleweed</summary>
+        <description>Tumbleweed is the openSUSE Rolling Release
+
+This OBS Project represents the content of the currently published
+snapshot. The newer repository for next publish can be found in openSUSE:Factory standard repository.
+</description>
+        <url>http://download.opensuse.org/tumbleweed/repo/oss/</url>
+      </repository>
+      <repository recommended="false">
+        <name>openSUSE:Factory</name>
+        <summary>The next openSUSE distribution</summary>
+        <description>Any user who wishes to have the newest packages that include, but are not limited to, the Linux kernel, SAMBA, git, desktops, office applications and many other packages, will want Tumbleweed. Tumbleweed appeals to Power Users, Software Developers and openSUSE Contributors. If you require the latest software stacks and Integrated Development Environment or need a stable platform closest to bleeding edge Linux, Tumbleweed is the best choice for you.
+
+Staging dashboard is located at: https://build.opensuse.org/staging_workflows/openSUSE:Factory 
+
+List of known devel projects: https://build.opensuse.org/package/view_file/openSUSE:Factory:Staging/dashboard/devel_projects
+
+Have a look at http://en.opensuse.org/Portal:Factory for more details.</description>
+        <url>https://download.opensuse.org/repositories/openSUSE:/Factory/ports/</url>
+      </repository>
+    </repositories>
+    <software>
+      <item>
+        <name>volumeicon</name>
+        <summary>Lightweight volume control for the system tray</summary>
+        <description>Volume Icon aims to be a lightweight volume control that sits in your system
+tray.
+
+Features:
+* Change volume by scrolling on the systray icon
+* Ability to choose which channel to control
+* Configurable stepsize
+* Several icon themes
+* Configurable external mixer
+* Volume slider
+* Hotkey support</description>
+      </item>
+    </software>
+  </group>
+</metapackage>

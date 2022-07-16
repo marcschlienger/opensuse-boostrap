@@ -30,7 +30,7 @@ for pkg in "${pkgs[@]}" ; do
 done
 
 [ -d ~/src/st ] && rm -rf $HOME/src/st
-git clone https://github.com/marcschlienger/st.git $HOME/src/st
+git clone -b myst https://github.com/marcschlienger/st.git $HOME/src/st
 cd $HOME/src/st
 sudo make CC=cc clean install
 

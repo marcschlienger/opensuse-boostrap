@@ -5,10 +5,10 @@ A simple bash script performing post-installation actions on a freshly installed
 ## Usage
 
 First install `git` using the package manager by issuing the command
-	`sudo pacman -S git`.
+	`sudo zypper in git`.
 
 Clone the repository:
-	`git clone https://gitlab.com/marcschlienger/opensuse-bootstrap.git`
+	`git clone https://github.com/marcschlienger/opensuse-bootstrap.git`
 
 Finally launch the script:
 	`sh opensuse-bootstrap/opensuse-bootstrap`

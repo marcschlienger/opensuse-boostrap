@@ -1,4 +1,4 @@
-# arch-bootstrap
+# openSUSE-bootstrap
 
 A simple bash script performing post-installation actions on a freshly installed openSUSE system.
 

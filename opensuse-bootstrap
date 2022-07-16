@@ -93,6 +93,7 @@ if [[ "$install_wm" == [yY] ]]; then
     esac
     bash 350-software_minimal.sh 
     bash 550-st.sh
+    bash 560-dmenu.sh
 fi
 
 bash 500-vim.sh

@@ -155,7 +155,7 @@ done
 ###############################################################################
 category Office
 pkgs=(
-texlive
+texlive-scheme-full
 zathura 
 zathura-plugin-djvu 
 zathura-plugin-ps
